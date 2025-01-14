@@ -1,0 +1,34 @@
+{
+  // Enable gjs support for eslint
+  "eslint.validate": ["glimmer-js"],
+
+  // Formatter configuration:
+  "[scss]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.formatOnSave": true
+  },
+  "[glimmer-js]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[ruby]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "rubocop.vscode-rubocop"
+  },
+  "[handlebars]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": true
+  },
+
+  // eslint fix on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+
+  "task.autoDetect": "off",
+  "eslint.debug": false
+}

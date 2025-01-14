@@ -1,0 +1,29 @@
+.manage-election {
+  .controls {
+    padding-top: 10px;
+
+    .state {
+      display: inline-block;
+    }
+  }
+}
+
+.avatar-flair.nominee {
+  top: 5px;
+}
+
+.election-post .cooked .nomination > span {
+  display: initial;
+
+  .nomination-statement {
+    margin-left: 33px;
+  }
+}
+
+.election-banner {
+  margin: 10px 0;
+}
+
+.election-controls button {
+  margin: 5px 0;
+}

@@ -1,0 +1,320 @@
+.election-list-container {
+  float: left;
+  clear: both;
+  margin-bottom: 5px;
+  padding-left: 9px;
+}
+
+.election-list ul {
+  margin: 0;
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
+
+  li {
+    display: inline-block;
+  }
+}
+
+.create-election .control-group {
+  margin-bottom: 15px;
+}
+
+#topic-title .election-status {
+  .election-status-label {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+
+  span {
+    padding: 4px 7px;
+    background: dark-light-diff($primary, $secondary, 90%, -65%);
+    margin-right: 5px;
+  }
+}
+
+.election-post .election-controls {
+  margin-top: 10px;
+
+  .btn {
+    margin-right: 10px;
+  }
+
+  .spinner-container {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.election-list-controls {
+  a {
+    float: right;
+  }
+}
+
+.create-election,
+.manage-election {
+  label {
+    font-size: 1em;
+  }
+}
+
+.create-election .inline {
+  display: inline-block;
+}
+
+.input-small {
+  width: 50px;
+}
+
+.manage-election div.ac-wrap {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nomination-statement .statement-composer-label {
+  display: inline-block;
+  border-left: 1px solid $primary-medium;
+  padding-left: 5px;
+
+  span {
+    font-size: 1em;
+    color: $primary-medium;
+  }
+}
+
+.statement-post-label {
+  color: dark-light-choose($primary-high, $secondary-low);
+  background: $primary-low;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.93em;
+  padding: 0 6px;
+  font-weight: normal;
+}
+
+.election-post .cooked {
+  .title {
+    text-decoration: underline;
+  }
+
+  .nomination-list {
+    margin-top: 15px;
+
+    .nomination {
+      padding-bottom: 15px;
+    }
+  }
+
+  .nomination {
+    border-bottom: none;
+
+    & > span {
+      display: flex;
+    }
+  }
+
+  .nomination-user {
+    padding: 0;
+    margin-right: 15px;
+    white-space: nowrap;
+  }
+
+  .nomination-user img {
+    margin-right: 5px;
+  }
+
+  .winner {
+    margin: 15px 0 20px 0;
+  }
+}
+
+.election-post .poll-container ul:not(.results) li {
+  display: flex;
+  margin: 0;
+  padding: 15px;
+
+  i {
+    margin-top: 5px;
+    padding-right: 10px;
+  }
+}
+
+.avatar-flair.nominee {
+  top: 14px;
+  bottom: initial;
+
+  .fa {
+    color: $tertiary;
+  }
+}
+
+.election-banner {
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
+  border-radius: 4px;
+  color: $secondary;
+  transition: all 0.25s;
+  max-width: 680px;
+
+  &.election-nomination {
+    background-color: $tertiary;
+
+    &:hover {
+      background-color: dark-light-diff($tertiary, $primary, 50%, -40%);
+    }
+  }
+
+  &.election-poll {
+    background-color: $success;
+
+    &:hover {
+      background-color: dark-light-diff($success, $primary, 50%, -40%);
+    }
+  }
+
+  &.election-closed-poll {
+    color: $primary;
+    background-color: $highlight;
+
+    &:hover {
+      background-color: dark-light-diff($highlight, $primary, 50%, -40%);
+    }
+  }
+}
+
+.election-time {
+  //margin: 15px;
+  margin-bottom: 15px;
+  padding: 0 10px;
+  width: 87%;
+  background-color: dark-light-diff($primary, $secondary, 95%, -65%);
+
+  .election-time-control {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+
+    .election-time-control-title {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 5px;
+
+      > input {
+        float: left;
+        margin-right: 5px;
+      }
+
+      > span {
+        text-decoration: underline;
+      }
+    }
+
+    .clear-time {
+      float: left;
+      padding-left: 10px;
+      border-left: 1px solid #b6b6b6;
+    }
+
+    label {
+      margin-bottom: 10px;
+    }
+
+    span {
+      float: left;
+      margin-right: 10px;
+    }
+
+    > input {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+
+  .election-description {
+    padding: 5px;
+  }
+}
+
+.set-time-label {
+  float: left;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid #b6b6b6;
+}
+
+.set-election-time {
+  text-align: center;
+  margin-bottom: 10px;
+
+  .date-time-card {
+    position: relative;
+    width: 270px;
+    text-align: left;
+
+    .disabled {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      cursor: not-allowed;
+      z-index: 99999;
+    }
+  }
+
+  .modal-date-time-set {
+    padding-top: 3px;
+    padding-bottom: 4px;
+    display: flex;
+    flex-direction: row;
+    clear: both;
+
+    .modal-date-area {
+      order: 1;
+    }
+
+    .modal-time-area {
+      order: 2;
+      margin-left: 10px;
+
+      .modal-time {
+        width: 127px;
+      }
+    }
+  }
+
+  .ui-timepicker-input {
+    width: 119px;
+    text-align: center;
+  }
+
+  .date-picker {
+    width: 121px;
+  }
+
+  .pika-single {
+    position: relative !important;
+
+    .pika-lendar {
+      border: 1px solid #eee;
+      padding: 14px;
+      margin: 0;
+      float: none;
+      width: auto;
+    }
+  }
+}
+
+.election-status-label {
+  margin: 20px 0 10px;
+  padding: 5px;
+  background: #eee;
+  border: solid #eee 5px;
+  border-radius: 10px;
+  width: 30%;
+}

@@ -1,0 +1,22 @@
+<DModal @closeModal={{this.close}} @title={{i18n (concat this.prefix 'label' ) }} class="close-topic-modal">
+  <:body>
+    <div class="control-group">
+      <label>
+        {{ i18n (concat this.prefix 'body') position=this.model.topic.election_position
+        categoryName=this.categoryName}}
+      </label>
+    </div>
+  </:body>
+
+  <:footer>
+    <div class="modal-footer">
+      <DButton @title={{'submit'}} @label={{'submit'}} @action={{this.toggleNomination}} @class='btn btn-primary' />
+
+      {{#if this.loading}}
+      {{loading-spinner size="small"}}
+      {{else}}
+      <a {{on "click" this.close}}>{{i18n "cancel"}}</a>
+      {{/if}}
+    </div>
+  </:footer>
+</DModal>

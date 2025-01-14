@@ -1,0 +1,45 @@
+{{!-- {{! app/components/election-controls.hbs }}
+<div class="election-controls">
+  {{#if this.isNominationAllowed}}
+    <button
+      type="button"
+      class="btn-primary toggle-nomination"
+      {{on "click" this.toggleNomination}}
+    >
+      {{i18n
+        (if
+          this.args.topic.election_is_nominee
+          "election.nomination.remove.label"
+          "election.nomination.add.label"
+        )
+      }}
+    </button>
+  {{/if}}
+  {{! 관리자가 선거 관리 페이지에 접근 가능 }}
+  {{#if this.isAdmin}}
+    <button
+      type="button"
+      class="btn-primary manage-election"
+      {{on "click" this.manage}}
+    >
+      {{i18n "election.manage.label"}}
+    </button>
+  {{/if}}
+  {{#if this.isAdmin}}
+    {{#if (eq this.args.topic.election_status ElectionStatuses.nomination)}}
+      <button
+        type="button"
+        class="btn-primary start-poll"
+        {{on "click" this.startPoll}}
+      >
+        {{i18n "election.start"}}
+      </button>
+    {{/if}}
+  {{/if}}
+
+  {{#if this.startingPoll}}
+    <div class="spinner-container">
+      <div class="spinner small"></div>
+    </div>
+  {{/if}}
+</div> --}}

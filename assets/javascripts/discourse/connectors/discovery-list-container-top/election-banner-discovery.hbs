@@ -1,0 +1,7 @@
+{{#if this.electionListEnabled}}
+{{#each @category.election_list as |e|}}
+{{#if e.banner}}
+<ElectionBanner @election={{e}} />
+{{/if}}
+{{/each}}
+{{/if}}

@@ -1,0 +1,84 @@
+ko:
+  election:
+    title: "%{position} 선거"
+    nomination:
+      default_message: "이 선거는 현재 후보 지명을 받고 있습니다. [기본 메시지]"
+    status:
+      poll: "열린 투표"
+      closed_poll: "닫힌 투표"
+    errors:
+      not_changed: "값이 변하지 않았습니다."
+      category_not_enabled: "카테고리에 선거가 활성화되어 있지 않습니다"
+      create_failed: "선거 생성 실패"
+      more_nominations: "선거를 실행하려면 더 많은 후보가 필요합니다."
+      seperate_poll: "선거 주제에 투표를 게시할 수 없습니다."
+      not_authorized: "You are not authorized to perform this action."
+      revisor_failed: "Post Revisor failed to update the Election Post."
+      set_status_failed: "Failed to set status"
+      set_message_failed: "Failed to set message"
+      set_position_failed: "Failed to set position"
+      position_too_short: "Position is too short"
+      self_nomination_state_not_changed: "Self nomination state has not been changed"
+      user_was_not_found: "User \"%{user}\" was not found"
+      set_nominations_failed: "Failed to set nominations"
+      set_winner_failed: "Failed to set winner"
+      nominations_not_changed: "Nominations have not changed"
+      only_named_user_can_self_nominate: "Only named users can self-nominate"
+      insufficient_trust_to_self_nominate: "Self nomination is open to users with trust level %{level} and above"
+      incorrect_status: "Incorrect status"
+      elections_disabled: "Elections are disabled"
+      set_poll_open_time_failed: "Failed to set poll open time"
+      nominations_at_least_2: "Nominations must be at least 2"
+      nominations_already_met: "Nominations already met"
+      voters_at_least_1: "Close after voters must be at least 1"
+      voters_already_met: "Voters already met"
+      poll_after: "After X not complete"
+      poll_manual: "Time needs to be set"
+      time_invalid: "Time is invalid"
+      topic_inaccessible: "Topic is inaccessible"
+
+    post:
+      nominated: "노미네이트"
+      nominee_title: "<a href='%{url}'>%{position}번쨰 후보</a>"
+      winner: "당선자"
+
+  site_settings:
+    elections_admin_moderator: "중재자가 선거를 관리할 수 있도록 허용"
+    elections_nav_category_list: "선거 카테고리의 탐색 제어 아래에 활성 선거 목록 표시"
+    elections_nominee_titles: "후보에 오른 선거 외의 게시물에 후보자의 제목 표시"
+    elections_nominee_avatar_flair: "선거 주제 내 후보자를 위한 아바타 감각의 폰트 어썸 클래스. 비활성화하려면 공백으로 둡니다."
+    elections_enabled: "선거 플러그인 사용"
+    elections_min_trust_to_self_nominate: "사용자가 선거에 스스로 지명하는 데 필요한 최소 신뢰도"
+    elections_status_banner_discovery: "카테고리 주제 목록에 선거 상태 배너 표시."
+    elections_status_banner_topic: "주제에 선거 상태 배너 표시."
+    elections_status_banner_default_result_hours: "주제 목록 배너에서 선거 결과가 강조 표시되는 기본 시간 수."
+
+  system_messages:
+    error_starting_poll:
+      title: "투표 시작 오류"
+      subject_template: "선거 투표가 설정된 시간에 시작되지 않았습니다"
+      text_body_template: |
+        [이 주제(topic_id: %{topic_id})]('/t/%{topic_id}')의 선거 여론조사는 다음과 같은 이유로 시작하지 못했습니다:
+        <br>
+        %{error}
+    error_closing_poll:
+      title: "투표 마감 오류"
+      subject_template: "선거 투표가 설정된 시간에 마감되지 않았습니다"
+      text_body_template: |
+        [이 주제(topic_id: %{topic_id})]('/t/%{topic_id}')의 선거 여론조사는 다음과 같은 이유로 마감하지 못했습니다:
+        <br>
+        %{error}
+    error_updating_election_post:
+      title: "선거 게시물 업데이트 오류"
+      subject_template: "선거 게시물을 업데이트하는 동안 오류가 발생했습니다"
+      text_body_template: |
+        [이 주제(topic_id: %{topic_id})]('/t/%{topic_id}')의 선거 게시물이 시작되지 않은 이유는 다음과 같습니다:
+        <br>
+        %{error}
+    election_status_changed:
+      title: "\"%{title}\" 의 투표 상태가 %{status}로 바뀌었습니다"
+      subject_template: "\"%{title}\" 의 투표 상태가 %{status} 입니다"
+      text_body_template: |
+        \"%{title}\" 의 투표 상태가 %{status}입니다.
+
+        [선거 주제](%{url})를 방문하여 자세히 알아보세요.

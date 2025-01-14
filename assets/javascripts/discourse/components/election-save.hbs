@@ -1,0 +1,11 @@
+<DButton @action={{this.save}} @title="election.manage.save" @label="election.manage.save" @disabled={{this.disabled}}
+  class="save" />
+
+<div class="state">
+  {{#if this.saving}}
+  {{loading-spinner size="small"}}
+  {{/if}}
+  {{#if this.icon}}
+  {{d-icon icon}}
+  {{/if}}
+</div>

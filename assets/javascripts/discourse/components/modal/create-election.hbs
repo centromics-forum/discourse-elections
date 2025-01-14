@@ -1,0 +1,92 @@
+<DModal @closeModal={{this.close}} @title={{i18n "election.create.label" }} class="close-topic-modal">
+  <:body>
+
+    <div class="control-group">
+      <label>Stages</label>
+      <label for="pollEnabledStages_FindingAnswer">
+        <input type="checkbox" checked={{this.pollEnabledStages_FindingAnswer}} class="input-small" {{on "change"
+          this.updateValue}} id='pollEnabledStages_FindingAnswer' />
+        Finding Answer</label>
+      <label for="pollEnabledStages_FindingWinner">
+        <input type="checkbox" checked={{this.pollEnabledStages_FindingWinner}} class="input-small" {{on "change"
+          this.updateValue}} id='pollEnabledStages_FindingWinner' />
+        Finding Winner</label>
+
+      <p>* available stages: {{ this.pollAvailableStagesString }}</p>
+      <p>* enabled stages: {{ this.pollEnabledStagesString }}</p>
+    </div>
+
+    <hr>
+
+    <div class="control-group">
+      <label>{{i18n "election.create.position"}}</label>
+      <Input @value={{this.position}} class="input-medium" />
+    </div>
+
+    {{#if this.pollEnabledStages_include_FindingWinnner }}
+
+    <div class="control-group">
+      <label>{{i18n "election.create.nomination_message"}}</label>
+      <DEditor @value={{this.nominationMessage}} @placeholder="election.create.nomination_message_placeholder" />
+    </div>
+
+    <div class="control-group">
+      <label>{{i18n "election.create.poll_message"}}</label>
+      <DEditor @value={{this.pollMessage}} @placeholder="election.create.poll_message_placeholder" />
+    </div>
+
+    <div class="control-group">
+      <label>{{i18n "election.create.closed_poll_message"}}</label>
+      <DEditor @value={{this.closedPollMessage}} @placeholder="election.create.closed_poll_message_placeholder" />
+    </div>
+
+    <div class="control-group">
+      <input type="checkbox" checked={{this.selfNominationAllowed}} />
+      {{i18n "election.create.self_nomination_allowed"}}
+    </div>
+
+    <div class="control-group">
+      <input type="checkbox" checked={{this.statusBanner}} />{{i18n "election.status_banner.enable"}}
+    </div>
+
+    <div class="control-group">
+      <span>{{i18n "election.status_banner.result_hours"}}</span>
+      <Input @type="number" @value={{this.statusBannerResultHours}} class="input-small" />
+    </div>
+
+    <!-- Poll open time enabled -->
+    <div class="control-group">
+      <Input @type="checkbox" @checked={{this.pollOpen}} class="input-small" />{{i18n "election.poll.open_time"}}
+    </div>
+
+    {{#if this.pollOpen}}
+    <ElectionTime @type="open" @after={{this.pollOpenAfter}} @hours={{this.pollOpenAfterHours}}
+      @nominations={{this.pollOpenAfterNominations}} @time={{this.pollOpenTime}} />
+    {{/if}}
+
+    <div class="control-group">
+      <Input @type="checkbox" @checked={{this.pollClose}} class="input-small" />{{i18n "election.poll.close_time"}}
+    </div>
+
+    {{#if this.pollClose}}
+    <ElectionTime @type="close" @after={{this.pollCloseAfter}} @hours={{this.pollCloseAfterHours}}
+      @voters={{this.pollCloseAfterVoters}} @time={{this.pollCloseTime}} />
+    {{/if}}
+
+    {{/if}} <!-- if this.pollCurrentStage_FindingWinner -->
+
+  </:body>
+
+  <:footer>
+    <div class="modal-footer">
+      <DButton @title="election.create.btn_label" @label="election.create.btn_label" @action={{this.createElection}}
+        class="btn btn-primary" @disabled={{this.disabled}} />
+
+      {{#if this.loading}}
+      {{loading-spinner size="small"}}
+      {{else}}
+      <a {{on "click" this.close}}>{{i18n "cancel"}}</a>
+      {{/if}}
+    </div>
+  </:footer>
+</DModal>

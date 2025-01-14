@@ -1,0 +1,7 @@
+<div class="{{this.className}}">
+  {{d-icon "star"}}
+  <span>{{i18n this.key position=this.election.position}}</span>
+  {{#if this.showTime}}
+  <span>{{i18n this.timeKey time=(election-time this.election.time)}}</span>
+  {{/if}}
+</div>

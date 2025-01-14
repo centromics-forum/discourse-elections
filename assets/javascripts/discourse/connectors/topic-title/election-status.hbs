@@ -1,0 +1,12 @@
+{{#if this.showStatus}}
+<div class="election-status-label">
+  {{#if this.currentStage_FindingWinner }}
+  <span>[{{ this.currentStage }}] {{i18n (concat "election.status." this.model.electionStatusName)}}</span>
+  {{else if this.currentStage_FindingAnswer }}
+  <span>[{{ this.currentStage }}] 기본 투표 중</span>
+  {{else}}
+  <span>(unknown stage)</span>
+  {{/if}}
+</div>
+<election-time-status topic={{this.model}} />
+{{/if}}

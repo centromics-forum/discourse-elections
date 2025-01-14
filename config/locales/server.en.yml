@@ -1,0 +1,84 @@
+en:
+  election:
+    title: "%{position} Election"
+    nomination:
+      default_message: "This election is currently taking nominations."
+    status:
+      poll: "opened"
+      closed_poll: "closed"
+    errors:
+      not_changed: "Value has not been changed"
+      category_not_enabled: "Category does not have elections enabled"
+      create_failed: "Election creation failed"
+      more_nominations: "More nominations are needed to run a poll."
+      seperate_poll: "You can't post a poll in an election topic."
+      not_authorized: "You are not authorized to perform this action."
+      revisor_failed: "Post Revisor failed to update the Election Post."
+      set_status_failed: "Failed to set status"
+      set_message_failed: "Failed to set message"
+      set_position_failed: "Failed to set position"
+      position_too_short: "Position is too short"
+      self_nomination_state_not_changed: "Self nomination state has not been changed"
+      user_was_not_found: "User \"%{user}\" was not found"
+      set_nominations_failed: "Failed to set nominations"
+      set_winner_failed: "Failed to set winner"
+      nominations_not_changed: "Nominations have not changed"
+      only_named_user_can_self_nominate: "Only named users can self-nominate"
+      insufficient_trust_to_self_nominate: "Self nomination is open to users with trust level %{level} and above"
+      incorrect_status: "Incorrect status"
+      elections_disabled: "Elections are disabled"
+      set_poll_open_time_failed: "Failed to set poll open time"
+      nominations_at_least_2: "Nominations must be at least 2"
+      nominations_already_met: "Nominations already met"
+      voters_at_least_1: "Close after voters must be at least 1"
+      voters_already_met: "Voters already met"
+      poll_after: "After X not complete"
+      poll_manual: "Time needs to be set"
+      time_invalid: "Time is invalid"
+      topic_inaccessible: "Topic is inaccessible"
+
+    post:
+      nominated: "Nominees"
+      nominee_title: "<a href='%{url}'>Nominee for %{position}</a>"
+      winner: "Winner"
+
+  site_settings:
+    elections_admin_moderator: "Allow moderators to administer elections"
+    elections_nav_category_list: "Show a list of active elections below the navigation controls in election categories"
+    elections_nominee_titles: "Show a title for nominees on posts outside of the election they are nominated for"
+    elections_nominee_avatar_flair: "Font Awesome class of the avatar flair for nominees within the election topic. Leave blank to disable."
+    elections_enabled: "Enable elections plugin"
+    elections_min_trust_to_self_nominate: "Minimum trust required for a user to self-nominate for an election"
+    elections_status_banner_discovery: "Show election status banners in category topic lists."
+    elections_status_banner_topic: "Show election status banners in topics."
+    elections_status_banner_default_result_hours: "Default number of hours election results are highlighted for in a topic list banner."
+
+  system_messages:
+    error_starting_poll:
+      title: "Error Starting Poll"
+      subject_template: "An election poll failed to start at the set time"
+      text_body_template: |
+        The election poll in [this topic (topic_id: %{topic_id})]('/t/%{topic_id}') failed to start because:
+        <br>
+        %{error}
+    error_closing_poll:
+      title: "Error Closing Poll"
+      subject_template: "An election poll failed to close at the set time"
+      text_body_template: |
+        The election poll in [this topic (topic_id: %{topic_id})]('/t/%{topic_id}') failed to close because:
+        <br>
+        %{error}
+    error_updating_election_post:
+      title: "Error Updating Election Post"
+      subject_template: "There was an error when trying to update an election post"
+      text_body_template: |
+        The election post in [this topic (topic_id: %{topic_id})]('/t/%{topic_id}') failed to start because:
+        <br>
+        %{error}
+    election_status_changed:
+      title: "\"%{title}\" poll has %{status}"
+      subject_template: "\"%{title}\" poll has %{status}"
+      text_body_template: |
+        \"%{title}\" poll has %{status}.
+
+        [Visit the election topic](%{url}) to find out more.

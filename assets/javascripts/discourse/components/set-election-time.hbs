@@ -1,0 +1,21 @@
+<div class="date-time-card" {{didInsert this.setup}}>
+  {{#if this.disabled}}
+  <div class="disabled"></div>
+  {{/if}}
+  <div class="modal-date-time-set">
+    <div class="modal-date-area">
+      <label class="input-group-label">
+        {{i18n "election.set_time.date"}}
+      </label>
+      <DatePicker @value={{this.date}} @containerId={{@dateElementId}} {{on "change" this.sendTime}} />
+    </div>
+    <div class="modal-time-area">
+      <label class="input-group-label">
+        {{i18n "election.set_time.time"}}
+      </label>
+      {{!-- <input type="time" id={{@timeElementId}} {{on "change" (fn (mut this.time) this.value)}} /> --}}
+      <Input type="time" id={{@timeElementId}} @value={{this.time}} {{on "change" this.sendTime}} />
+    </div>
+  </div>
+  <div id={{this.dateElementId}}></div>
+</div>
