@@ -60,6 +60,39 @@ after_initialize do
   require_relative "lib/nomination"
   require_relative "lib/poll_edits"
 
+
+  require_dependency 'custom_field'
+
+  # false_fields 메서드 추가
+  CustomField.class_eval do
+    def serialize(value)
+      base_type = Array === type ? type.first : type
+
+      case base_type
+      when :json
+        value.to_json
+      when :integer
+        #value.to_i.to_s
+        value.to_s
+      when :boolean
+        value = !!Helpers::CUSTOM_FIELD_TRUE.include?(value) if String === value
+
+        value ? "t" : "f"
+      else
+        case value
+        when Hash
+          value.to_json
+        when TrueClass
+          "t"
+        when FalseClass
+          "f"
+        else
+          value.to_s
+        end
+      end
+    end
+  end
+
   validate(:post, :validate_election_polls) do |_force = nil|
     return unless raw_changed?
     return if is_first_post?
